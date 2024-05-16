@@ -1,5 +1,5 @@
-import React from "react";
-import {Navbar, Container} from 'react-bootstrap';
+import React from "react"; 
+import {Navbar, Container} from 'react-bootstrap'; // imports react components from bootstrap
 function Header(){
     return(
         <Navbar bg="dark" variant="dark">
