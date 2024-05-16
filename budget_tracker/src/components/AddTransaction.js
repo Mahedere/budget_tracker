@@ -1,16 +1,16 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext } from 'react'; //imports useState and usecontext
 import { GlobalContext } from '../GlobalState';
 
 function AddTransaction() {
-  const [text, setText] = useState('');
+  const [text, setText] = useState(''); // [state variable,function]=manages(initial value)
   const [amount, setAmount] = useState(0);
-  const { addTransaction } = useContext(GlobalContext);
+  const { addTransaction } = useContext(GlobalContext); //to add new transactions
 
   const onSubmit = e => {
-    e.preventDefault();
+    e.preventDefault();//not to reload
 
     const newTransaction = {
-      id: Math.floor(Math.random() * 100000000),
+      id: Math.floor(Math.random() * 100000000),//generates a random ID 
       text,
       amount: +amount
     };
