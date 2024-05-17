@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { GlobalContext } from '../GlobalState';
-function Balance() {
-    const { transactions } = useContext(GlobalContext); //to access the context
-  const amounts = transactions.map(transaction => transaction.amount);//for each transaction extracts the amount property
 
-  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2); //rounding the final result to 2 decimal points
+function Balance() {
+  const { transactions } = useContext(GlobalContext);
+
+  // Calculate balance logic
+  const amounts = transactions.map(transaction => transaction.amount);
+  const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
+
   return (
     <div>
-      <h4>Your Balance</h4>
-      <h1>$0.00</h1>
+      <h2>Your Balance</h2>
+      <h3>${total}</h3>
     </div>
   );
 }
+
 export default Balance;
