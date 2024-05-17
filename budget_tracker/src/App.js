@@ -5,6 +5,7 @@ import Header from './components/Header';
 import IncomeExpenses from './components/IncomeExpenses';
 import TransactionList from './components/TransactionList';
 import { GlobalProvider } from './GlobalState';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
