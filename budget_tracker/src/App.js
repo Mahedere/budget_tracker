@@ -4,16 +4,21 @@ import Balance from './components/Balance';
 import Header from './components/Header';
 import IncomeExpenses from './components/IncomeExpenses';
 import TransactionList from './components/TransactionList';
+import { GlobalProvider } from './GlobalState';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Budget Tracker</h1>
-      <Header/>
-      <Balance/>
-      <IncomeExpenses/>
-      <AddTransaction/>
-      <TransactionList/>
-    </div>
+    <GlobalProvider>
+      <div className="App">
+        <Header />
+        <div className="container">
+          <Balance />
+          <IncomeExpenses />
+          <TransactionList />
+          <AddTransaction />
+        </div>
+      </div>
+    </GlobalProvider>
   );
 }
 
